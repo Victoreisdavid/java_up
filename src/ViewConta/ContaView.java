@@ -6,30 +6,16 @@ import java.util.Scanner;
 
 public class ContaView {
 
+   public String formatarConta(Conta conta){
+       StringBuilder dados = new StringBuilder();
+       dados.append("Nome: ").append(conta.getNome());
+       dados.append("\nEmail: ").append(conta.getEmail());
+       dados.append("\nCPF: ").append(conta.getCpf());
+       dados.append("\nTelefone: ").append(conta.getTelefone());
+       dados.append("\nEndereço: ").append(conta.getEndereco());
 
-    public Conta criarConta(){
-        Scanner sc = new Scanner(System.in);
+       return dados.toString();
+   }
 
-        System.out.println("Nome:");
-        String nome = sc.nextLine();
-
-        System.out.println("Email:");
-        String email = sc.nextLine();
-
-        System.out.println("Senha:");
-        String senha = sc.nextLine();
-
-        System.out.println("CPF:");
-        String cpf = sc.nextLine();
-
-        System.out.println("Telefone:");
-        String telefone = sc.nextLine();
-
-        Conta dados = new Conta(nome, email, senha, cpf, telefone);
-
-
-        sc.close();
-        return dados;
-    }
 
 }
