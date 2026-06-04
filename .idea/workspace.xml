@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="74525a62-0771-4872-a257-5030b2cad38a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ControllerMedico/ControllerMedico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelMedico/Medico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelMedico/StatusMedico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelMedico/TipoMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControllerConta/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllerConta/ContaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelConta/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelConta/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewConta/ContaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewConta/ContaView.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;guidinho2203-creator&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Victoreisdavid/java_up.git&quot;,
+    &quot;accountId&quot;: &quot;c552286e-f696-45ca-9fe8-fe3fc20a85a9&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="3EEdHIwiqXIm9Sq4NLcAZuoNrCh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "stories/#10",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/guilherme/IdeaProjects/java_up",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74525a62-0771-4872-a257-5030b2cad38a" name="Changes" comment="" />
+      <created>1779747574098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779747574098</updated>
+      <workItem from="1779747575373" duration="5736000" />
+      <workItem from="1779818362390" duration="5817000" />
+      <workItem from="1779969566047" duration="53000" />
+      <workItem from="1780584527657" duration="13312000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,6 +1,6 @@
-package ControllerConta;
+package controllerConta;
 
-import ModelConta.Conta;
+import modelConta.Conta;
 
 public class ContaController {
     public void CriarConta(Conta dados){
