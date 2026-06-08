@@ -1,6 +1,5 @@
 package Controllersessao;
-
-import model.modelSessao.Sessao;
+import ModelSessao.Sessao;
 
 public class SessaoController {
 
