@@ -2,6 +2,6 @@ package ModelCliente;
 
 public enum StatusCliente{
 
-    Ativo,Cancelado,Suspenso;
+    ATIVO,CANCELADO,SUSPENSO;
 
 }

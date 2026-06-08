@@ -11,11 +11,11 @@ public class ClienteView {
 
         StatusCliente status = cliente.getStatusConta();
 
-        if (status == StatusCliente.Ativo){
+        if (status == StatusCliente.ATIVO){
             dados.append("Ativo");
-        } else if (status == StatusCliente.Cancelado) {
+        } else if (status == StatusCliente.CANCELADO) {
             dados.append("Cancelado");
-        }else if (status == StatusCliente.Suspenso){
+        }else if (status == StatusCliente.SUSPENSO){
             dados.append("Suspenso");
         }else{
             dados.append("Desconhecido");
