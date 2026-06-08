@@ -8,13 +8,15 @@ public class Conta {
     private String Senha;
     private String cpf;
     private String telefone;
+    private String endereco;
 
-    public Conta(String nome, String email, String senha, String cpf, String telefone) {
+    public Conta(String nome, String email, String senha, String cpf, String telefone, String endereco) {
         this.nome = nome;
         this.email = email;
         Senha = senha;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -53,6 +55,13 @@ public class Conta {
         return telefone;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
@@ -62,5 +71,6 @@ public class Conta {
         System.out.println("Senha:" +this.getSenha() );
         System.out.println("CPF:" +this.getCpf());
         System.out.println("Telefone:" +this.getTelefone());
+        System.out.println("Endereco: "+this.getEndereco());
     }
 }
