@@ -1,7 +1,6 @@
-package ViewConta;
+package viewConta;
 
-import ControllerConta.ContaController;
-import ModelConta.Conta;
+import modelConta.Conta;
 import java.util.Scanner;
 
 public class ContaView {

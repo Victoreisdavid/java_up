@@ -1,6 +1,6 @@
-package ControllerConta;
+package controllerConta;
 
-import ModelConta.Conta;
+import modelConta.Conta;
 
 import java.util.Scanner;
 
