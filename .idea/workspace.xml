@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74525a62-0771-4872-a257-5030b2cad38a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ControllerMedico/ControllerMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelMedico/Medico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelMedico/StatusMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelMedico/TipoMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControllerConta/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllerConta/ContaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ModelConta/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelConta/Conta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewConta/ContaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewConta/ContaView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControllerCliente/ClienteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControllerMedico/ControllerMedico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/teste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Consulta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Medico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Paciente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelCliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelCliente/StatusCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/cliente/StatusCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelPlano/Plano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/plano/Plano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModelPlano/TipoPlano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/plano/TipoPlano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllerConta/ContaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/Exibivel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelConta/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/conta/Conta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,24 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "stories/#10",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/guilherme/IdeaProjects/java_up",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/guilherme/IdeaProjects/java_up&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Model/conta" />
+      <recent name="$PROJECT_DIR$/src/Model/cliente" />
+      <recent name="$PROJECT_DIR$/src/Model/plano" />
+      <recent name="$PROJECT_DIR$/src/Model" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

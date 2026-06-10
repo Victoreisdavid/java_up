@@ -65,12 +65,4 @@ public class Conta {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    public void listar(){
-        System.out.println("Nome:" +this.getNome());
-        System.out.println("Email:" +this.getEmail());
-        System.out.println("Senha:" +this.getSenha() );
-        System.out.println("CPF:" +this.getCpf());
-        System.out.println("Telefone:" +this.getTelefone());
-        System.out.println("Endereco: "+this.getEndereco());
-    }
 }
