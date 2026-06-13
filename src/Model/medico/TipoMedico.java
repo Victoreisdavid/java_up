@@ -1,7 +1,7 @@
-package modelMedico;
+package Model.medico;
 
 public enum TipoMedico {
-    DOUTOR,
+    CARDIOLOGISTA,
     DENTISTA,
     CLINICO_GERAL,
     PEDIATRA
