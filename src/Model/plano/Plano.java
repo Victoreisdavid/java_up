@@ -1,10 +1,12 @@
-package ModelPlano;
+package model.plano;
 
-public class Plano {
+import java.io.Serializable;
+
+public class Plano implements Serializable {
     private String id;
     private String idContaCliente;
     private TipoPlano tipoPlano;
-    private Float valorMes;
+    private Float valorMes  ;
 
     public Plano(String id, String idContaCliente, TipoPlano tipoPlano, float valorMes) {
         this.id = id;
