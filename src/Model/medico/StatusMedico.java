@@ -1,4 +1,4 @@
-package modelMedico;
+package Model.medico;
 
 public enum StatusMedico {
     ATIVO,
