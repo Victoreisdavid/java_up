@@ -1,6 +1,7 @@
-package ModelEstabelecimento;
+package Model.estabelecimento;
+import java.io.Serializable;
 
-public class Agendamento {
+public class Agendamento implements Serializable{
 
     private String paciente;
     private String data;

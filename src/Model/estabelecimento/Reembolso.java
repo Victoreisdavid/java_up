@@ -1,6 +1,7 @@
-package ModelEstabelecimento;
+package Model.estabelecimento;
+import java.io.Serializable;
 
-public class Reembolso {
+public class Reembolso implements Serializable{
 
     private double valor;
     private String motivo;

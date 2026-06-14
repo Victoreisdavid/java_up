@@ -1,11 +1,13 @@
-package ModelEstabelecimento;
+package Model.estabelecimento;
 
-public class Clinica extends Estabelecimento {
+import java.io.Serializable;
+
+public class Clinica extends Estabelecimento implements Serializable {
 
     private String especialidade;
 
-    public Clinica(String nome, String endereco, String especialidade) {
-        super(nome, endereco);
+    public Clinica(String nome, String endereco, String especialidade,String cnpj,int id) {
+        super(nome, endereco,cnpj,id);
         this.especialidade = especialidade;
     }
 
@@ -21,6 +23,8 @@ public class Clinica extends Estabelecimento {
     public void exibirInformacoes() {
         System.out.println("Clínica: " + nome);
         System.out.println("Endereço: " + endereco);
+        System.out.println("CNPJ: " + cnpj);
+        System.out.println("ID: " + id);
         System.out.println("Especialidade: " + especialidade);
     }
 }
