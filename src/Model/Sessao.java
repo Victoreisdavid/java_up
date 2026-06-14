@@ -1,6 +1,8 @@
 package Model;
 
-public class Sessao {
+import java.io.Serializable;
+
+public class Sessao implements Serializable {
 
     private String id;
     private String idConta;

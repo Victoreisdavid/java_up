@@ -1,6 +1,8 @@
 package Model.plano;
 
-public class Plano {
+import java.io.Serializable;
+
+public class Plano  implements Serializable {
     private String id;
     private String idContaCliente;
     private TipoPlano tipoPlano;
