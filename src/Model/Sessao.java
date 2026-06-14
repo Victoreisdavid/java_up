@@ -1,4 +1,4 @@
-package ModelSessao;
+package Model;
 
 public class Sessao {
 
@@ -26,11 +26,5 @@ public class Sessao {
         this.idConta = idConta;
     }
 
-    @Override
-    public String toString() {
-        return "Sessao{" +
-                "id='" + id + '\'' +
-                ", idConta='" + idConta + '\'' +
-                '}';
-    }
+
 }

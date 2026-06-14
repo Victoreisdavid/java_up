@@ -1,8 +1,10 @@
 package Model.medico;
+import Model.conta.Conta;
 
-import modelConta.Conta;
+import java.io.Serializable;
 
-public class Medico extends Conta {
+public class Medico extends Conta implements Serializable {
+
     private String crm;
     private Model.medico.StatusMedico status;
     private Model.medico.TipoMedico tipo;

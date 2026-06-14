@@ -20,7 +20,6 @@ public class ControllerMedico {
         }
         return null;
     }
-
     public ArrayList<Medico> LocalizarMedicoPorNome(String nomeMedico) {
         ArrayList<Medico> medicos = new ArrayList<>();
         for (Medico m : bancoMedico.values()) {

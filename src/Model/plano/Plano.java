@@ -1,4 +1,4 @@
-package ModelPlano;
+package Model.plano;
 
 public class Plano {
     private String id;
@@ -6,7 +6,7 @@ public class Plano {
     private TipoPlano tipoPlano;
     private Float valorMes;
 
-    public Plano(String id, String idContaCliente, TipoPlano tipoPlano, float valorMes) {
+    public Plano(String id, String idContaCliente, Model.plano.TipoPlano tipoPlano, float valorMes) {
         this.id = id;
         this.idContaCliente = idContaCliente;
         this.tipoPlano = tipoPlano;
@@ -21,7 +21,7 @@ public class Plano {
         return idContaCliente;
     }
 
-    public TipoPlano getTipoPlano() {
+    public Model.plano.TipoPlano getTipoPlano() {
         return tipoPlano;
     }
 
