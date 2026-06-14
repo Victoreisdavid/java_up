@@ -2,7 +2,9 @@ package ModelCliente;
 
 import ModelConta.Conta;
 
-public class Cliente extends Conta {
+import java.io.Serializable;
+
+public class Cliente extends Conta implements Serializable {
     private StatusCliente statusConta;
 
 

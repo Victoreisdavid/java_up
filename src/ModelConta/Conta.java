@@ -1,8 +1,9 @@
 package ModelConta;
 
 
+import java.io.Serializable;
 
-public class Conta {
+public class Conta implements Serializable {
     private String nome;
     private String email;
     private String Senha;
