@@ -3,6 +3,7 @@ package modelConta;
 
 
 public class Conta {
+    private String id;
     private String nome;
     private String email;
     private String Senha;
@@ -10,7 +11,8 @@ public class Conta {
     private String telefone;
     private String endereco;
 
-    public Conta(String nome, String email, String senha, String cpf, String telefone, String endereco) {
+    public Conta(String id,String nome, String email, String senha, String cpf, String telefone, String endereco) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         Senha = senha;
@@ -58,6 +60,14 @@ public class Conta {
     public String getEndereco() {
         return endereco;
     }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }

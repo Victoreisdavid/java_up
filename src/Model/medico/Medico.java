@@ -1,18 +1,17 @@
-package modelMedico;
+package Model.medico;
 
 import modelConta.Conta;
 
 public class Medico extends Conta {
     private String crm;
-    private StatusMedico status;
-    private TipoMedico tipo;
+    private Model.medico.StatusMedico status;
+    private Model.medico.TipoMedico tipo;
 
-    public Medico(String nome, String email, String senha, String cpf, String telefone, String crm, TipoMedico tipo, StatusMedico status) {
-        super(nome, email, senha, cpf, telefone);
+    public Medico(String id, String nome, String email, String senha, String cpf, String telefone, String endereco, String crm, StatusMedico status, TipoMedico tipo) {
+        super(id, nome, email, senha, cpf, telefone, endereco);
         this.crm = crm;
-        this.tipo = tipo;
         this.status = status;
-
+        this.tipo = tipo;
     }
 
     public String getCrm() {
@@ -23,9 +22,19 @@ public class Medico extends Conta {
         this.crm = crm;
     }
 
-    @Override
-    public void listar() {
-        super.listar();
-        System.out.println("CRM: " + getCrm());
+    public StatusMedico getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusMedico status) {
+        this.status = status;
+    }
+
+    public TipoMedico getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoMedico tipo) {
+        this.tipo = tipo;
     }
 }
