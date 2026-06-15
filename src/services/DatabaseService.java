@@ -16,6 +16,7 @@ public class DatabaseService {
     private void initializeFile() {
         if(!this.file.exists()) {
             try {
+                this.file.getParentFile().mkdirs();
                 this.file.createNewFile();
             } catch (IOException e) {
                 throw new RuntimeException(e);
