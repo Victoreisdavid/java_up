@@ -1,18 +1,19 @@
 package Model.conta;
-public class Conta {
+
+import java.io.Serializable;
+
+public class Conta implements Serializable {
     private String id;
     private String nome;
     private String email;
-    private String Senha;
     private String cpf;
     private String telefone;
     private String endereco;
 
-    public Conta(String id,String nome, String email, String senha, String cpf, String telefone, String endereco) {
+    public Conta(String id,String nome, String email, String cpf, String telefone, String endereco) {
         this.id = id;
         this.nome = nome;
         this.email = email;
-        Senha = senha;
         this.cpf = cpf;
         this.telefone = telefone;
         this.endereco = endereco;
@@ -32,14 +33,6 @@ public class Conta {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return Senha;
-    }
-
-    public void setSenha(String senha) {
-        Senha = senha;
     }
 
     public String getCpf() {
