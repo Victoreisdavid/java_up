@@ -1,5 +1,7 @@
 package model.plano;
 
+import Model.plano.TipoPlano;
+
 import java.io.Serializable;
 
 public class Plano implements Serializable {

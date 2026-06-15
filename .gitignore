@@ -27,3 +27,4 @@ replay_pid*
 git rm
 
 .idea
+data/*
