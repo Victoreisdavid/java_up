@@ -8,7 +8,7 @@ public class Plano implements Serializable {
     private TipoPlano tipoPlano;
     private Float valorMes  ;
 
-    public Plano(String id, String idContaCliente, TipoPlano tipoPlano, float valorMes) {
+    public Plano(String id, String idContaCliente, Model.plano.TipoPlano tipoPlano, float valorMes) {
         this.id = id;
         this.idContaCliente = idContaCliente;
         this.tipoPlano = tipoPlano;
@@ -23,7 +23,7 @@ public class Plano implements Serializable {
         return idContaCliente;
     }
 
-    public TipoPlano getTipoPlano() {
+    public Model.plano.TipoPlano getTipoPlano() {
         return tipoPlano;
     }
 

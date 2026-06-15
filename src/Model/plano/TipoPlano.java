@@ -1,4 +1,4 @@
-package ModelPlano;
+package Model.plano;
 
 public enum TipoPlano {
      BASICO,    // Consulta com médico e dentista.

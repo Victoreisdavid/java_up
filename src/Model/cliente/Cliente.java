@@ -1,22 +1,20 @@
 package Model.cliente;
 
 
-import ModelCliente.StatusCliente;
+import Model.cliente.StatusCliente;
+import Model.conta.Conta;
 
-public class Cliente extends modelConta.Conta {
-    private ModelCliente.StatusCliente statusConta;
+public class Cliente extends Conta {
+    private StatusCliente statusConta;
 
-
-    public Cliente(String id, String nome, String email, String senha, String cpf, String telefone, String endereco, StatusCliente statusConta) {
+    public Cliente(String id, String nome, String email, String senha, String cpf, String telefone, String endereco) {
         super(id, nome, email, senha, cpf, telefone, endereco);
-        this.statusConta = statusConta;
     }
-
-    public ModelCliente.StatusCliente getStatusConta() {
+    public StatusCliente getStatusConta() {
         return statusConta;
     }
 
-    public void setStatusConta(ModelCliente.StatusCliente statusConta) {
+    public void setStatusConta(Model.cliente.StatusCliente statusConta) {
         this.statusConta = statusConta;
     }
 }

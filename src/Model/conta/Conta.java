@@ -1,7 +1,4 @@
-package modelConta;
-
-
-
+package Model.conta;
 public class Conta {
     private String id;
     private String nome;
