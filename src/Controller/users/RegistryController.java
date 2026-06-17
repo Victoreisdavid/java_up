@@ -29,6 +29,12 @@ public class RegistryController {
         }
     }
 
+    public void deletarUsuario(String id) {
+        DatabaseService db = new DatabaseService(buildFilePath(id));
+
+        db.deleteFile();
+    }
+
     public Conta obterUsuario(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
         Conta user = (Conta) db.readObjectFromFile();

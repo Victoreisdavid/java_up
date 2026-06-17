@@ -6,50 +6,17 @@ import Model.conta.Conta;
 import Model.medico.Medico;
 import Model.medico.StatusMedico;
 import Model.medico.TipoMedico;
+import Utils.EscolhaOpcao;
 import services.IDService;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RegistryView {
-    private RegistryController registryController = new RegistryController();
+    private final RegistryController registryController = new RegistryController();
 
     public RegistryView() {
 
-    }
-
-    public void Saudar() {
-        System.out.println("=== BEM-VINDO ===");
-    }
-
-    public void MenuInicial(Scanner sc) {
-        this.menuOpcoes();
-        int opt = this.escolhaOpcoes(sc);
-        sc.nextLine();
-
-        if (opt == 1) {
-            try {
-                criarUsuario(sc);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        } else if (opt == 2) {
-            this.listarMedicos();
-        } else if (opt == 3) {
-            this.listarClientes();
-        }
-    }
-
-    public void menuOpcoes() {
-        System.out.println("Selecione uma opção:");
-        System.out.println("1. Registrar conta");
-        System.out.println("2. Listar médicos");
-        System.out.println("3. Listar clientes");
-    }
-
-    public int escolhaOpcoes(Scanner sc) {
-        int opt = sc.nextInt();
-        return opt;
     }
 
     public void criarUsuario(Scanner sc) throws Exception {
@@ -75,8 +42,7 @@ public class RegistryView {
         int finalOption = -1;
 
         while(true) {
-            int option = this.escolhaOpcoes(sc);
-            sc.nextLine();
+            int option = EscolhaOpcao.escolhaOpcoes(sc);
 
             if (option == 1 || option == 2) {
                 finalOption = option;
@@ -112,8 +78,7 @@ public class RegistryView {
             finalOption = -1;
 
             while(true) {
-                int option = this.escolhaOpcoes(sc);
-                sc.nextLine();
+                int option = EscolhaOpcao.escolhaOpcoes(sc);
 
                 if (option >= 1 && option <= 4) {
                     finalOption = option;
@@ -151,7 +116,7 @@ public class RegistryView {
         this.registryController.salvarUsuario(finalConta);
     }
 
-    private void listarMedicos() {
+    public void listarMedicos() {
         System.out.println("-".repeat(25));
 
         ArrayList<Conta> contas = this.registryController.obterUsuarios();
@@ -172,7 +137,7 @@ public class RegistryView {
         }
     }
 
-    private void listarClientes() {
+    public void listarClientes() {
         System.out.println("-".repeat(25));
         ArrayList<Conta> contas = this.registryController.obterUsuarios();
 
@@ -188,5 +153,13 @@ public class RegistryView {
                 System.out.printf("%s - %s\n", "=".repeat(25), "=".repeat(25));
             }
         }
+    }
+
+    public void deletarConta(Scanner sc) {
+        System.out.println("Digite o ID da conta.");
+        String id = sc.nextLine();
+
+        this.registryController.deletarUsuario(id);
+        System.out.println("Operação concluída.");
     }
 }
