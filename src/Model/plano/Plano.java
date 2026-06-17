@@ -1,4 +1,4 @@
-package model.plano;
+package Model.plano;
 
 import Model.plano.TipoPlano;
 
