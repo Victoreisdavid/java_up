@@ -52,4 +52,12 @@ public class DatabaseService {
             return in.readObject();
         }
     }
+
+    public void deleteFile() {
+        if(!this.fileExists()) {
+            return;
+        }
+
+        this.file.delete();
+    }
 }

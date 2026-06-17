@@ -3,15 +3,15 @@ package Model.estabelecimento;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Estabelecimento implements Serializable {
+public class Estabelecimento implements Serializable {
     protected String cnpj;
-    protected int id;
+    protected String id;
     protected String nome;
     protected String endereco;
     protected ArrayList<Agendamento> agendamentos;
     protected ArrayList<Reembolso> reembolsos;
 
-    public Estabelecimento(String nome, String endereco,String cnpj, int id) {
+    public Estabelecimento(String nome, String endereco,String cnpj, String id) {
         this.cnpj = cnpj;
         this.id = id;
         this.nome = nome;
@@ -26,10 +26,10 @@ public abstract class Estabelecimento implements Serializable {
     public void setCnpj(String cnpj){
         this.cnpj = cnpj;
     }
-    public int getId(){
-        return  id;
+    public String getId(){
+        return id;
     }
-    public void setId(int id){
+    public void setId(String id){
         this.id = id;
     }
     public void adicionarAgendamento(Agendamento agendamento) {
@@ -55,6 +55,4 @@ public abstract class Estabelecimento implements Serializable {
     public ArrayList<Reembolso> getReembolsos() {
         return reembolsos;
     }
-
-    public abstract void exibirInformacoes();
 }
