@@ -7,6 +7,7 @@ import Model.conta.ContaInvalida;
 import Model.plano.Plano;
 import Model.receita.Receita;
 import services.DatabaseService;
+import services.LoggerService;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,17 +31,29 @@ public class ReceitaController {
         DatabaseService db = new DatabaseService(buildFilePath(receita.getId()));
 
         db.serializeObjectToFile(receita);
+
+        LoggerService.log(
+                String.format("Receita criada com o ID #%s", receita.getId())
+        );
     }
 
     public void deletarReceita(String id) {
         DatabaseService db = new DatabaseService(buildFilePath(id));
 
         db.deleteFile();
+
+        LoggerService.log(
+                String.format("Receita criada com o ID #%s", id)
+        );
     }
 
     public Receita obterReceita(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
         Receita receita = (Receita) db.readObjectFromFile();
+
+        LoggerService.log(
+                String.format("Receita obtida com o ID #%s", receita.getId())
+        );
 
         if (!db.fileExists()) {
             return null;
@@ -53,6 +66,8 @@ public class ReceitaController {
         File file = new File(databasePath);
         File[] files = file.listFiles();
         ArrayList<Receita> receitas = new ArrayList<>();
+
+        LoggerService.log("Lista de receitas obtida");
 
         if(files == null) {
             return receitas;
@@ -74,5 +89,4 @@ public class ReceitaController {
 
         return receitas;
     }
-
 }

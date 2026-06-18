@@ -3,6 +3,7 @@ package Controller.users;
 import Model.cliente.Cliente;
 import Model.conta.Conta;
 import services.DatabaseService;
+import services.LoggerService;
 
 import javax.xml.crypto.Data;
 import java.io.File;
@@ -25,6 +26,10 @@ public class RegistryController {
 
         try {
             db.serializeObjectToFile(conta);
+
+            LoggerService.log(
+                    String.format("Conta criada com o ID #%s", conta.getId())
+            );
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -33,11 +38,19 @@ public class RegistryController {
     public void deletarUsuario(String id) {
         DatabaseService db = new DatabaseService(buildFilePath(id));
 
+        LoggerService.log(
+                String.format("Conta deletada com o ID #%s", id)
+        );
+
         db.deleteFile();
     }
 
     public Conta obterUsuario(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
+
+        LoggerService.log(
+                String.format("Conta obtida com o ID #%s", id)
+        );
 
         if (!db.fileExists()) {
             return null;
@@ -52,6 +65,8 @@ public class RegistryController {
         File file = new File("data/users");
         File[] files = file.listFiles();
         ArrayList<Conta> contas = new ArrayList<Conta>();
+
+        LoggerService.log("Lista de usuários obtida");
 
         if (files == null) {
             return contas;
