@@ -6,6 +6,7 @@ import Model.conta.Conta;
 import Model.conta.ContaInvalida;
 import Model.plano.Plano;
 import services.DatabaseService;
+import services.LoggerService;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,6 +39,10 @@ public class PlanoController {
         DatabaseService db = new DatabaseService(buildFilePath(plano.getId()));
         DatabaseService cDb = new DatabaseService(buildClienteFilePath(plano.getIdContaCliente()));
 
+        LoggerService.log(
+                String.format("Plano criado com o ID #%s", plano.getId())
+        );
+
         if (!cDb.fileExists()) {
             throw new ContaInvalida("A conta não existe");
         }
@@ -49,11 +54,19 @@ public class PlanoController {
         DatabaseService db = new DatabaseService(buildFilePath(id));
 
         db.deleteFile();
+
+        LoggerService.log(
+                String.format("Plano deletado com o ID #%s", id)
+        );
     }
 
     public Plano obterPlano(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
         Plano plano = (Plano) db.readObjectFromFile();
+
+        LoggerService.log(
+                String.format("Plano obtido com o ID #%s", plano.getId())
+        );
 
         if (!db.fileExists()) {
             return null;
@@ -76,6 +89,8 @@ public class PlanoController {
         File file = new File(databasePath);
         File[] files = file.listFiles();
         ArrayList<Plano> planos = new ArrayList<Plano>();
+
+        LoggerService.log("Lista de planos obtida");
 
         if(files == null) {
             return planos;
@@ -100,6 +115,10 @@ public class PlanoController {
 
     public Plano obterPlanoDoCliente(String clienteID) throws IOException, ClassNotFoundException {
         ArrayList<Plano> planos = this.obterPlanos();
+
+        LoggerService.log(
+                String.format("Plano do cliente #%s pesquisado no banco de dados", clienteID)
+        );
 
         for(Plano plano: planos) {
             Cliente cliente = plano.getCliente();

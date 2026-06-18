@@ -7,6 +7,7 @@ import Model.estabelecimento.Agendamento;
 import Model.estabelecimento.Estabelecimento;
 import Model.estabelecimento.EstabelecimentoInvalido;
 import services.DatabaseService;
+import services.LoggerService;
 
 import javax.xml.crypto.Data;
 import java.io.File;
@@ -43,7 +44,13 @@ public class EstabelecimentoController {
 
         try {
             db.serializeObjectToFile(estabelecimento);
+            LoggerService.log(
+                    String.format("Estabelecimento criado com o ID #%s", estabelecimento.getId())
+            );
         } catch (IOException e) {
+            LoggerService.log(
+                    String.format("Erro ao criar estabelecimento com o ID #%s", estabelecimento.getId())
+            );
             throw new RuntimeException(e);
         }
     }
@@ -52,11 +59,19 @@ public class EstabelecimentoController {
         DatabaseService db = new DatabaseService(buildFilePath(id));
 
         db.deleteFile();
+
+        LoggerService.log(
+                String.format("Estabelecimento deletado com o ID #%s", id)
+        );
     }
 
     public Estabelecimento obterEstabelecimento(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
         Estabelecimento estabelecimento = (Estabelecimento) db.readObjectFromFile();
+
+        LoggerService.log(
+                String.format("Estabelecimento obtido o ID #%s", estabelecimento.getId())
+        );
 
         if (!db.fileExists()) {
             return null;
@@ -69,6 +84,8 @@ public class EstabelecimentoController {
         File file = new File("data/estabelecimentos");
         File[] files = file.listFiles();
         ArrayList<Estabelecimento> estabelecimentos = new ArrayList<>();
+
+        LoggerService.log("Lista de estabelecimentos obtida");
 
         if (files == null) {
             return estabelecimentos;
@@ -98,6 +115,10 @@ public class EstabelecimentoController {
         DatabaseService eDb = new DatabaseService(buildFilePath(agendamento.getEstabelecimentoID()));
         DatabaseService pcDb = new DatabaseService(buildCliente(agendamento.getPacienteID()));
 
+        LoggerService.log(
+                String.format("Agendamento criado com o id #%s", agendamento.getId())
+        );
+
         if (!eDb.fileExists()) {
             throw new EstabelecimentoInvalido("Estabelecimento não existe");
         }
@@ -113,6 +134,10 @@ public class EstabelecimentoController {
         DatabaseService db = new DatabaseService(buildAgendamentoFilePath(id));
         Agendamento agendamento = (Agendamento) db.readObjectFromFile();
 
+        LoggerService.log(
+                String.format("Agendamento obtido com o ID #%s", agendamento.getId())
+        );
+
         if (!db.fileExists()) {
             return null;
         }
@@ -124,6 +149,8 @@ public class EstabelecimentoController {
         File agendamentosDir = new File("data/estabelecimentos/agendamentos");
         File[] agendamentoFiles = agendamentosDir.listFiles();
         ArrayList<Agendamento> agendamentos = new ArrayList<>();
+
+        LoggerService.log("Lista de agendamentos obtida");
 
         for (File af: agendamentoFiles) {
             if (af.exists()) {
@@ -166,6 +193,10 @@ public class EstabelecimentoController {
         DatabaseService db = new DatabaseService(buildAgendamentoFilePath(id));
 
         db.deleteFile();
+
+        LoggerService.log(
+                String.format("Agendamento deletado com o ID #%s", id)
+        );
     }
 
 }

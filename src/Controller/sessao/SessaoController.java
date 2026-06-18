@@ -3,6 +3,7 @@ package Controller.sessao;
 import Model.Sessao;
 import Model.receita.Receita;
 import services.DatabaseService;
+import services.LoggerService;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,17 +27,29 @@ public class SessaoController {
         DatabaseService db = new DatabaseService(buildFilePath(sessao.getId()));
 
         db.serializeObjectToFile(sessao);
+
+        LoggerService.log(
+                String.format("Sessão criada com o ID #%s", sessao.getId())
+        );
     }
 
     public void deletarSessao(String id) {
         DatabaseService db = new DatabaseService(buildFilePath(id));
 
         db.deleteFile();
+
+        LoggerService.log(
+                String.format("Sessão criada com o ID #%s", id)
+        );
     }
 
     public Sessao obterSessao(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
         Sessao sessao = (Sessao) db.readObjectFromFile();
+
+        LoggerService.log(
+                String.format("Sessão obtida com o ID #%s", sessao.getId())
+        );
 
         return sessao;
     }
@@ -45,6 +58,8 @@ public class SessaoController {
         File file = new File(databasePath);
         File[] files = file.listFiles();
         ArrayList<Sessao> sessoes = new ArrayList<>();
+
+        LoggerService.log("Lista de sessões obtida");
 
         if(files == null) {
             return sessoes;
