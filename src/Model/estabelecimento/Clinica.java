@@ -1,13 +1,15 @@
 package Model.estabelecimento;
 
+import Model.plano.TipoPlano;
+
 import java.io.Serializable;
 
 public class Clinica extends Estabelecimento implements Serializable {
 
     private String especialidade;
 
-    public Clinica(String nome, String endereco, String especialidade,String cnpj,String id) {
-        super(nome, endereco,cnpj,id);
+    public Clinica(String nome, String endereco, String especialidade,String cnpj,String id, TipoPlano planoCoberto) {
+        super(nome, endereco,cnpj,id, planoCoberto);
         this.especialidade = especialidade;
     }
 
