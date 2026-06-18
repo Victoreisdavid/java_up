@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RegistryView {
-    private final RegistryController registryController = new RegistryController();
+    private final RegistryController registryController;
 
-    public RegistryView() {
-
+    public RegistryView(RegistryController registryController) {
+        this.registryController = registryController;
     }
 
     public void criarUsuario(Scanner sc) throws Exception {
