@@ -1,9 +1,10 @@
 package Model.medico;
+import Model.Contrato;
 import Model.conta.Conta;
 
 import java.io.Serializable;
 
-public class Medico extends Conta implements Serializable {
+public class Medico extends Conta implements Serializable, Contrato {
 
     private String crm;
     private Model.medico.StatusMedico status;
@@ -38,5 +39,18 @@ public class Medico extends Conta implements Serializable {
 
     public void setTipo(TipoMedico tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String DadosFormatados() {
+        return """
+           Cliente #%s
+           Nome: %s
+           Email: %s
+           CPF: %s
+           Telefone: %s
+           Endereço: %s
+           CRM: %s
+           """.formatted(this.getId(), this.getNome(), this.getEmail(), this.getCpf(), this.getTelefone(), this.getEndereco(), this.crm);
     }
 }
