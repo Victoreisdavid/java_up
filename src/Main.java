@@ -22,7 +22,6 @@ public class Main {
         System.out.println("8. Sair");
     }
 
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
