@@ -50,7 +50,7 @@ public class Main {
         ReceitaController receitaController = new ReceitaController();
         SessaoController sessaoController = new SessaoController();
 
-        RegistryView view = new RegistryView();
+        RegistryView view = new RegistryView(registryController);
         EstabelecimentoView estabelecimentos = new EstabelecimentoView(
                 estabelecimentoController,
                 planoController,

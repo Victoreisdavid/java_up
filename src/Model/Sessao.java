@@ -41,6 +41,6 @@ public class Sessao implements Serializable {
     public String getIdAgendamento() { return this.idAgendamento; }
 
     public void setIdAgendamento(String idAgendamento) {
-        this.idAgendamento = idEstabelecimento;
+        this.idAgendamento = idAgendamento;
     }
 }
