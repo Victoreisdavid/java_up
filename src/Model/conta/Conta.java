@@ -1,8 +1,10 @@
 package Model.conta;
 
+import Model.Contrato;
+
 import java.io.Serializable;
 
-public class Conta implements Serializable {
+public class Conta implements Serializable, Contrato {
     public static String databasePath = "data/users/";
 
     private String id;
@@ -66,5 +68,16 @@ public class Conta implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String DadosFormatados() {
+        return """
+           Conta #%s
+           Nome: %s
+           Email: %s
+           CPF: %s
+           Telefone: %s
+           Endereço: %s
+           """.formatted(id, nome, email, cpf, telefone, endereco);
     }
 }

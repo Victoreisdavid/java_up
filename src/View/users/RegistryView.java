@@ -123,14 +123,8 @@ public class RegistryView {
 
         for (Conta conta: contas) {
             if (conta instanceof Medico medico) {
-                System.out.printf("Médico #%s\n", medico.getId());
-                System.out.printf("Nome: %s\n", medico.getNome());
-                System.out.printf("Email: %s\n", medico.getEmail());
-                System.out.printf("CPF: %s\n", medico.getCpf());
-                System.out.printf("Telefone: %s\n", medico.getTelefone());
-                System.out.printf("Endereço: %s\n", medico.getEndereco());
-                System.out.printf("CRM: %s\n", medico.getCrm());
-                System.out.printf("Tipo de medico: %s\n", medico.getTipo().toString());
+                String texto = medico.DadosFormatados();
+                System.out.println(texto);
 
                 System.out.printf("%s - %s\n", "=".repeat(25), "=".repeat(25));
             }
@@ -143,12 +137,8 @@ public class RegistryView {
 
         for (Conta conta: contas) {
             if (conta instanceof Cliente cliente) {
-                System.out.printf("Cliente #%s\n", cliente.getId());
-                System.out.printf("Nome: %s\n", cliente.getNome());
-                System.out.printf("Email: %s\n", cliente.getEmail());
-                System.out.printf("CPF: %s\n", cliente.getCpf());
-                System.out.printf("Telefone: %s\n", cliente.getTelefone());
-                System.out.printf("Endereço: %s\n", cliente.getEndereco());
+                String texto = cliente.DadosFormatados();
+                System.out.println(texto);
 
                 System.out.printf("%s - %s\n", "=".repeat(25), "=".repeat(25));
             }
