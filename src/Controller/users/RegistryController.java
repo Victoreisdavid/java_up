@@ -1,5 +1,6 @@
 package Controller.users;
 
+import Model.cliente.Cliente;
 import Model.conta.Conta;
 import services.DatabaseService;
 
@@ -13,7 +14,7 @@ public class RegistryController {
     }
 
     private String buildFilePath(String id) {
-        String baseFilepath = "data/users/";
+        String baseFilepath = Conta.databasePath;
         baseFilepath += id + ".data";
 
         return baseFilepath;
@@ -37,6 +38,11 @@ public class RegistryController {
 
     public Conta obterUsuario(String id) throws java.io.IOException, ClassNotFoundException {
         DatabaseService db = new DatabaseService(buildFilePath(id));
+
+        if (!db.fileExists()) {
+            return null;
+        }
+
         Conta user = (Conta) db.readObjectFromFile();
 
         return user;
@@ -47,6 +53,9 @@ public class RegistryController {
         File[] files = file.listFiles();
         ArrayList<Conta> contas = new ArrayList<Conta>();
 
+        if (files == null) {
+            return contas;
+        }
 
         for (File f: files) {
             if (f.exists()) {

@@ -3,6 +3,8 @@ package Model.conta;
 import java.io.Serializable;
 
 public class Conta implements Serializable {
+    public static String databasePath = "data/users/";
+
     private String id;
     private String nome;
     private String email;

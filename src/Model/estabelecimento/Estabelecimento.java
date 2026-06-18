@@ -1,5 +1,7 @@
 package Model.estabelecimento;
 
+import Model.plano.TipoPlano;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -10,14 +12,16 @@ public class Estabelecimento implements Serializable {
     protected String endereco;
     protected ArrayList<Agendamento> agendamentos;
     protected ArrayList<Reembolso> reembolsos;
+    private TipoPlano planoCoberto;
 
-    public Estabelecimento(String nome, String endereco,String cnpj, String id) {
+    public Estabelecimento(String nome, String endereco,String cnpj, String id, TipoPlano planoCoberto) {
         this.cnpj = cnpj;
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.agendamentos = new ArrayList<>();
         this.reembolsos = new ArrayList<>();
+        this.planoCoberto = planoCoberto;
     }
 
     public String getCnpj(){
@@ -46,6 +50,10 @@ public class Estabelecimento implements Serializable {
 
     public String getEndereco() {
         return endereco;
+    }
+
+    public TipoPlano getPlanoCoberto() {
+        return this.planoCoberto;
     }
 
     public ArrayList<Agendamento> getAgendamentos() {

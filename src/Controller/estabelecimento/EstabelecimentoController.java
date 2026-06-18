@@ -1,7 +1,11 @@
 package Controller.estabelecimento;
 
+import Model.cliente.Cliente;
 import Model.conta.Conta;
+import Model.conta.ContaInvalida;
+import Model.estabelecimento.Agendamento;
 import Model.estabelecimento.Estabelecimento;
+import Model.estabelecimento.EstabelecimentoInvalido;
 import services.DatabaseService;
 
 import javax.xml.crypto.Data;
@@ -15,6 +19,20 @@ public class EstabelecimentoController {
 
     private String buildFilePath(String id) {
         String baseFilepath = "data/estabelecimentos/";
+        baseFilepath += id + ".data";
+
+        return baseFilepath;
+    }
+
+    private String buildAgendamentoFilePath(String id) {
+        String baseFilepath = "data/estabelecimentos/agendamentos/";
+        baseFilepath += id + ".data";
+
+        return baseFilepath;
+    }
+
+    private String buildCliente(String id) {
+        String baseFilepath = Conta.databasePath;
         baseFilepath += id + ".data";
 
         return baseFilepath;
@@ -40,6 +58,10 @@ public class EstabelecimentoController {
         DatabaseService db = new DatabaseService(buildFilePath(id));
         Estabelecimento estabelecimento = (Estabelecimento) db.readObjectFromFile();
 
+        if (!db.fileExists()) {
+            return null;
+        }
+
         return estabelecimento;
     }
 
@@ -48,6 +70,9 @@ public class EstabelecimentoController {
         File[] files = file.listFiles();
         ArrayList<Estabelecimento> estabelecimentos = new ArrayList<>();
 
+        if (files == null) {
+            return estabelecimentos;
+        }
 
         for (File f: files) {
             if (f.exists()) {
@@ -67,4 +92,80 @@ public class EstabelecimentoController {
 
         return estabelecimentos;
     }
+
+    public void salvarAgendamento(Agendamento agendamento) throws EstabelecimentoInvalido, IOException {
+        DatabaseService db = new DatabaseService(buildAgendamentoFilePath(agendamento.getId()));
+        DatabaseService eDb = new DatabaseService(buildFilePath(agendamento.getEstabelecimentoID()));
+        DatabaseService pcDb = new DatabaseService(buildCliente(agendamento.getPacienteID()));
+
+        if (!eDb.fileExists()) {
+            throw new EstabelecimentoInvalido("Estabelecimento não existe");
+        }
+
+        if (!pcDb.fileExists()) {
+            throw new ContaInvalida("A conta do paciente não existe");
+        }
+
+        db.serializeObjectToFile(agendamento);
+    }
+
+    public Agendamento obterAgendamento(String id) throws IOException, ClassNotFoundException {
+        DatabaseService db = new DatabaseService(buildAgendamentoFilePath(id));
+        Agendamento agendamento = (Agendamento) db.readObjectFromFile();
+
+        if (!db.fileExists()) {
+            return null;
+        }
+
+        return agendamento;
+    }
+
+    public ArrayList<Agendamento> obterAgendamentos() {
+        File agendamentosDir = new File("data/estabelecimentos/agendamentos");
+        File[] agendamentoFiles = agendamentosDir.listFiles();
+        ArrayList<Agendamento> agendamentos = new ArrayList<>();
+
+        for (File af: agendamentoFiles) {
+            if (af.exists()) {
+                DatabaseService db = new DatabaseService(af.getPath());
+                try {
+                    Agendamento agendamento = (Agendamento) db.readObjectFromFile();
+
+                    DatabaseService agDb = new DatabaseService(buildFilePath(agendamento.getEstabelecimentoID()));
+                    DatabaseService pcDb = new DatabaseService(buildCliente(agendamento.getPacienteID()));
+
+                    try {
+                        Estabelecimento estabelecimento = (Estabelecimento) agDb.readObjectFromFile();
+
+                        agendamento.setEstabelecimento(estabelecimento);
+                    } catch (Exception _) {
+                        // do nothing
+                    }
+
+                    try {
+                        Cliente cliente = (Cliente) pcDb.readObjectFromFile();
+
+                        agendamento.setPaciente(cliente);
+                    } catch (Exception _) {
+                        // do nothing2
+                    }
+
+                    agendamentos.add(agendamento);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+
+        return agendamentos;
+    }
+
+    public void deletarAgentamento(String id) {
+        DatabaseService db = new DatabaseService(buildAgendamentoFilePath(id));
+
+        db.deleteFile();
+    }
+
 }
